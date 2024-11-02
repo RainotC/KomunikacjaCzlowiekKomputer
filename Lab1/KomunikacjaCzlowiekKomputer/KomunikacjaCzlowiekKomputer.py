@@ -45,15 +45,17 @@ data_rsel = file_rsel[1:]
 len_rsel = len(data_rsel)
 xaxis_rsel, yaxis_rsel = preparing_arrays(file_rsel, len_rsel)
 
+line_rsel = plt.plot(xaxis_rsel, yaxis_rsel, color="blue", label = '1-Evol-RS')
+line_celrs = plt.plot(xaxis_celrs, yaxis_celrs, color="green", label ='1-Coev-RS')
+line_2celrs = plt.plot(xaxis_2celrs, yaxis_2celrs, color="red", label = '2-Coev-RS')
+line_cel = plt.plot(xaxis_cel, yaxis_cel, color="black", label = '1-Coev')
+line_2cel = plt.plot(xaxis_2cel, yaxis_2cel, color="magenta", label = '2-Coev')
 
-plt.plot(xaxis_2cel, yaxis_2cel, color="magenta")
-plt.plot(xaxis_cel, yaxis_cel, color="black")
-plt.plot(xaxis_celrs, yaxis_celrs, color="green")
-plt.plot(xaxis_2celrs, yaxis_2celrs, color="red")
-plt.plot(xaxis_rsel, yaxis_rsel, color="blue")
+plt.xlim([0, 500000])
+plt.ylim([0.6, 1])
 plt.xlabel("Rozegranych gier")
 plt.ylabel("Odsetek wygranych gier")
-
+plt.legend()
 plt.show()
 
 
